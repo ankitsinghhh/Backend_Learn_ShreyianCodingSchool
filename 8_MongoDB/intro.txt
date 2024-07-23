@@ -1,0 +1,38 @@
+Data Storage: 
+aisa kch jaaha pe hum sare users ki info store kr skte h 
+example -> file.txt 
+but it is not efficient as in above we cannot store datatype other than text 
+
+database:
+hence we needs db files which can store any type of data 
+
+
+
+types of Databases :
+SQL | NO-SQL
+
+SQL -> it means simply ki data ko ek roop me rakhna i.e. tables, isme data tables ke roop me rakha jaega
+
+no-sql -> means not only sql but also there will be some more things, isme data ko objects k roop me rakha jaega
+MongoDB -> it is no-sql based data 
+
+WHAT AND WHY ? 
+
+
+TERMINNOLOGIES -   collections , documents , schemas , keys , models
+
+backend contains two server -> application server and database server
+
+application server -> jo routes ko handle krta hai aur requests ko accept krta hai,
+sb kch krta h sivaay data k kaam ke, request accept krta hai , process krta hai aur agr database se kch chahiye hota h toh request bhejta h database server ko , iska ans milne pe data aajata h jo ki user ko dedeta h application server
+
+
+Database -> Collections -> Document 
+
+------------------------------------------------------------------------
+
+CODE               DATABASE
+-----------------------------------
+mongoose.connect -> database create
+model create     -> collection 
+CREATE           -> document
