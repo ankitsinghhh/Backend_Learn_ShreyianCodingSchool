@@ -18,6 +18,10 @@ app.get("/",function(req,res){
    
 })
 
+app.get("/edit/:filename",function(req,res){
+    res.render('edit',{filename:req.params.filename})
+})
+
 app.get('/file/:filename',function(req,res){
     fs.readFile(`./files/${req.params.filename}`,"utf-8",function(err,filedata){
         // console.log(filedata)
@@ -28,6 +32,13 @@ app.get('/file/:filename',function(req,res){
 app.post("/create",function(req,res){
     // console.log(req.body) // to check data aa rha hai ki nhi 
     fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`,req.body.details, function(err){
+        res.redirect("/")
+    })
+})
+
+app.post('/edit/:filename', function(req,res){
+    // console.log(req.body) // to check data submitted by edit page
+    fs.rename(`./files/${req.body.previous}`,`./files/${req.body.new}.txt`,function(err){
         res.redirect("/")
     })
 })
