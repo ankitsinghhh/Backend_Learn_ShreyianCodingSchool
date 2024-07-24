@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+   <div class="wrapper w-full h-full bg-zinc-900">
+
+    <!-- Navbar -->
+   <div class="navbar flex justify-center bg-violet-500 gap-4 text-white">
+    <a href="/read" class="my-2 px-4 py-2 bg-orange-400 border border-orange-800 rounded-lg hover:bg-orange-700 duration-300 transition-all">Show all Users</a>
+    <a href="/" class="my-2 px-4 py-2 bg-orange-400 border border-orange-800 rounded-lg hover:bg-orange-700 duration-300 transition-all">Create User</a>
+   </div>
+    <div class="  p-10 text-white">
+        
+    
+
+        <h1 class="text-3xl tracking-tighter mb-3">Create User</h1>
+        <hr class="mb-4">
+
+
+        <form action="/create" method="post"
+        class="flex flex-col gap-3"
+        >
+            <input
+            class="px-5 py-3 bg-transparent border-2 border-zinc-800 rounded-lg
+            outline-none focus:outline-orange-500 "
+            type="text"
+            placeholder="Name"
+            name="name"
+            />
+       
+            <input
+            class="px-5 py-3 bg-transparent border-2 border-zinc-800 rounded-lg
+            outline-none focus:outline-orange-500 "
+            type="email"
+            placeholder="Email"
+            name="email"
+            />
+      
+            <input
+            class="px-5 py-3 bg-transparent border-2 border-zinc-800 rounded-lg
+            outline-none focus:outline-orange-500 "
+            type="text"
+            placeholder="Image URL"
+            name="image"
+            />
+            <input
+            class="px-5 py-2 bg-blue-500 rounded-md cursor-pointer w-fit"
+            type="submit"
+            value="Create User"
+        
+            />
+           
+        </form>
+
+    </div>
+   </div>
+</body>
+</html>

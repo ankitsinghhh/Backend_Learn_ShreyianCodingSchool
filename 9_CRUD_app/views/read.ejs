@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Users</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <div class="wrapper w-full min-h-full bg-zinc-900">
+    
+        <!-- Navbar -->
+        <div class="navbar flex justify-center bg-violet-500 gap-4 text-white">
+         <a href="/read" class="my-2 px-4 py-2 bg-orange-400 border border-orange-800 rounded-lg hover:bg-orange-700 duration-300 transition-all">Show all Users</a>
+         <a href="/" class="my-2 px-4 py-2 bg-orange-400 border border-orange-800 rounded-lg hover:bg-orange-700 duration-300 transition-all">Create User</a>
+        </div>
+         <div class="  p-10 text-white">
+
+            <h1 class="text-3xl tracking-tighter mb-3">All Users</h1>
+            <hr class="mb-4 bg-zinc-700">
+    
+            <!-- Users List -->
+            <div class="w-[95%] mx-auto users flex gap-4  flex-wrap">
+    
+             <!-- User -->
+
+                <% if(users.length>0){ %>
+
+                    <%  users.forEach(function(user){ %>
+                        <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
+                            <div class="w-full h-72 rounded-lg bg-zinc-700 overflow-hidden">
+                             
+                                <img 
+                                    src="<%= user.image %>"
+                                    alt="profile"
+                                    class="w-full h-full object-cover"
+                                />
+                                
+                            </div>
+                            <h3 class="text-xl tracking-tighter mt-3"><%= user.name  %></h3>
+                            <h4 class="text-zinc-400"><%= user.email %></h4>
+                            <div class="flex gap-3 justify-between mt-5">
+                                <a href="" class="py-2 px-4 bg-purple-600 text-white hover:bg-purple-700 rounded-lg">Edit User</a>
+                                <a href="/delete/<%= user._id %>" class="py-2 px-4 bg-red-600 text-white hover:bg-red-700 rounded-lg">Delete User</a>
+                            </div>
+                        </div>
+                   <% }) %>
+
+                <% }else{ %>
+
+                    <h1 class="text-center self-center text-zinc-500 text-3xl">No Data Found</h1>
+
+
+               <% } %>
+
+    
+            <!-- User 2-->
+            <div class="hidden user min-w-72 p-4 bg-zinc-800 rounded-lg">
+                <div class="w-full h-52 rounded-lg bg-zinc-700">
+                 
+    
+                </div>
+                <h3 class="text-xl tracking-tighter mt-3">Edward Baratheon Targaryen</h3>
+                <h4 class="text-zinc-400">edward@gmail.com</h4>
+                <div class="flex gap-3 justify-between mt-5">
+                    <a href="" class="py-2 px-4 bg-purple-600 text-white hover:bg-purple-700 rounded-lg">Edit User</a>
+                    <a href="" class="py-2 px-4 bg-red-600 text-white hover:bg-red-700 rounded-lg">Delete User</a>
+                </div>
+            </div>
+    
+
+         </div>
+        </div>
+
+
+
+    
+</body>
+</html>
